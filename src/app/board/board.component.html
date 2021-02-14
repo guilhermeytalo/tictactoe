@@ -1,0 +1,20 @@
+<div>
+  <div>
+    <div>{{countXWin}}</div>
+    <div>{{countYWin}}</div>
+    <div>{{countDraw}}</div>
+  </div>
+  <div class="board" *ngFor="let row of [0,1,2]">
+    <app-cell *ngFor="let col of [0,1,2]"
+              [row]="row"
+              [col]="col"
+              [piece]="board[row][col]"
+              (click)="move(row, col)">
+    </app-cell>
+  </div>
+  <div class="status tc ps">
+    {{ statusMessage }}
+  </div>
+  <div class="pts"></div>
+  <button (click)="newGame()" class="btn btn-primary new-game">New Game</button>
+</div>

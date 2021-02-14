@@ -1,0 +1,24 @@
+
+.board {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  color: #fff;
+}
+
+.status {
+  color: #A2A2A2;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid #A2A2A2;
+  /* width: 100px; */
+  border-radius: 34px;
+  /* height: 16px; */
+  margin-top: 20px;
+  /* margin-right: 0px !important; */
+}
+
+.new-game {
+  // width: 100%;
+}
