@@ -1,20 +1,48 @@
 <div>
+  <div class="hero-selection">
+    <label class="x-selector" (keydown.enter)="selectCharacter(characterName1, hero1)">
+      X: <input [(ngModel)]="characterName1">
+    </label>
+
+    <label (keydown.enter)="selectCharacter(characterName2, hero2)">
+      O: <input [(ngModel)]="characterName2">
+    </label>
+  </div>
+
   <div>
-    <div>{{countXWin}}</div>
-    <div>{{countYWin}}</div>
-    <div>{{countDraw}}</div>
+    <div class="scoreboard">
+
+      <div class="o-win">
+        <img src="assets/icons/ellipse.svg" alt="y_icon">
+        {{countYWin}} vitórias
+      </div>
+
+      <div class="x-win">
+        <img src="assets/icons/close.svg" alt="x_icon">
+        {{countXWin}} vitórias
+      </div>
+
+      <div class="draw-win">
+        <img src="assets/icons/balance.svg" alt="draw_icon">
+        {{countDraw}} empates
+      </div>
+    </div>
+
+    <div class="board" *ngFor="let row of [0,1,2]">
+      <app-cell *ngFor="let col of [0,1,2]"
+                [row]="row"
+                [col]="col"
+                [piece]="board[row][col]"
+                (click)="move(row, col)">
+      </app-cell>
+    </div>
+    <div class="footer">
+      <button (click)="newGame()" class="btn btn-primary new-game">
+        <img class="reload-game" src="./assets/icons/refresh.svg" alt="new_game">
+      </button>
+      <div class="status tc ps">
+        {{ statusMessage }}
+      </div>
+    </div>
   </div>
-  <div class="board" *ngFor="let row of [0,1,2]">
-    <app-cell *ngFor="let col of [0,1,2]"
-              [row]="row"
-              [col]="col"
-              [piece]="board[row][col]"
-              (click)="move(row, col)">
-    </app-cell>
-  </div>
-  <div class="status tc ps">
-    {{ statusMessage }}
-  </div>
-  <div class="pts"></div>
-  <button (click)="newGame()" class="btn btn-primary new-game">New Game</button>
 </div>

@@ -1,24 +1,84 @@
+@import "../../variables";
+
+.hero-selection{
+  display: flex;
+  justify-content: space-around;
+
+  .x-selector {
+    margin-right: 30px;
+  }
+  input {
+    border-radius: 6px;
+    border: 2px solid $tertiary;
+  }
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+  .x-win {
+    display: table;
+    color: $secondary;
+    img {
+      width: 30px;
+      height: auto;
+      filter: invert(50%) sepia(89%) saturate(1708%) hue-rotate(186deg) brightness(87%) contrast(90%);
+      display: table-cell;
+      margin-left: 18px;
+    }
+  }
+
+  .o-win {
+    display: table;
+    color: $primary;
+    img {
+      width: 25px;
+      height: auto;
+      filter: invert(96%) sepia(40%) saturate(3802%) hue-rotate(151deg) brightness(93%) contrast(85%);
+      display: table-cell;
+      margin-left: 18px;
+    }
+  }
+
+  .draw-win {
+    display: table;
+    color: $tertiary;
+    img {
+      width: 25px;
+      height: auto;
+      filter: invert(66%) sepia(0%) saturate(6137%) hue-rotate(99deg) brightness(94%) contrast(74%);
+      display: table-cell;
+      margin-left: 18px;
+    }
+  }
+}
+
 
 .board {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  color: #fff;
+  color:$white;
 }
 
 .status {
-  color: #A2A2A2;
+  color: $tertiary;
   font-size: 14px;
   font-weight: 700;
-  border: 1px solid #A2A2A2;
-  /* width: 100px; */
+  border: 1px solid $tertiary;
   border-radius: 34px;
-  /* height: 16px; */
-  margin-top: 20px;
-  /* margin-right: 0px !important; */
+  width: 20%;
 }
 
-.new-game {
-  // width: 100%;
+.footer {
+  .reload-game {
+    filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(6deg) brightness(107%) contrast(102%);
+  }
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
 }

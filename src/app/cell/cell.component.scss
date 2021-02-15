@@ -1,24 +1,26 @@
+@import "../../variables";
+
 .cell {
   width: 100px;
   height: 100px;
   box-sizing: border-box;
   font-size: 5em;
   font-family: sans-serif;
-  color: #000;
+  color: $black;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .cell:hover {
-  background-color: #c1cdcd;
+  background-color: $shadow;
   cursor: pointer;
 }
 
 .vl {
-  border-right: 3px solid #A2A2A2;
+  border-right: 3px solid $tertiary;
 }
 
 .hl {
-  border-bottom: 3px solid #A2A2A2;
+  border-bottom: 3px solid $tertiary;
 }

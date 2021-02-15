@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CellEnum } from '../CellEnum';
+import {ApiService} from "../services/api.service";
 
 @Component({
   selector: 'app-board',
@@ -14,12 +15,28 @@ export class BoardComponent implements OnInit {
   public countDraw: number = 0;
   public countYWin: number = 0;
   public countXWin: number = 0;
+  public characterName1: string = '';
+  public characterName2: string = '';
+  public allCharacters: [] = [];
+  public hero1: {};
+  public hero2: {};
 
 
-  constructor() {}
+  constructor(
+    private apiService: ApiService,
+  ) {}
 
   ngOnInit() {
     this.newGame();
+  }
+
+  selectCharacter(name: string, selectedHero) {
+    this.apiService.getCharacter(name).subscribe((res: any) => {
+      selectedHero = res;
+      console.log(res)
+    }, err => {
+      console.log(err)
+    });
   }
 
   gameOver(): boolean {
