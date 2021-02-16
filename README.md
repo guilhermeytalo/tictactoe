@@ -1,27 +1,48 @@
-# TicTacToe
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.2.
+# Celero Front-End Challenge
 
-## Development server
+Teste para a vaga de FrontEnd
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Getting started
 
-## Code scaffolding
+### :computer: Instalação
+É necessário ter o [Node](https://nodejs.org/en/) instalado na sua máquina (a versão utilizada foi a v14.15.4) caso não possua o [Node](https://nodejs.org/en/) instalado só clicar no link e baixar o instalador diretamente do site.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Desenvolvimento
 
-## Build
+### :hammer: Tech's Utilizadas
+O teste foi feito em [Angular](https://angular.io/) na versão 10.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### :clipboard: Pré requisitos
+Primeiramente você precisa ter o [Node](https://nodejs.org/en/) instalado na sua máquina após isso instalar o  [Angular](https://angular.io/guide/setup-local) globalmente
+```shell
+$ npm install -g @angular/cli
+```
 
-## Running unit tests
+### :scroll: Setup
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Após fazer as instalações necessárias clone o repositório na sua máquina com os seguintes comandos abaixo.
 
-## Running end-to-end tests
+```shell
+$ git clone https://github.com/guilhermeytalo/tictactoe.git
+$ cd tictactoe
+$ npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Após fazer as instalações para poder rodar o projeto basta utilizar o comando abaixo (assumiremos que você está na pasta do projeto).
 
-## Further help
+```shell
+$ ng serve --open
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### :rocket: Deploying / Produção
+Caso deseje fazer build para produção utilize o comando abaixo para ver o site em produção
+[Clique Aqui](https://celero-front-end-test.netlify.app/).
+
+```shell
+$ ng build --prod
+```
+### :wrench: Testes
+
+No seguinte projeto não foi utilizado testes unitários ou e2e.
+
