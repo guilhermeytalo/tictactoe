@@ -15,9 +15,9 @@ export class BoardComponent implements OnInit {
   public countDraw: number = 0;
   public countYWin: number = 0;
   public countXWin: number = 0;
+  public allCharacters: [] = [];
   public characterName1: string = '';
   public characterName2: string = '';
-  public allCharacters: [] = [];
   public hero1: {};
   public hero2: {};
 
@@ -30,22 +30,36 @@ export class BoardComponent implements OnInit {
     this.newGame();
   }
 
-  selectCharacter(name: string, selectedHero) {
-    this.apiService.getCharacter(name).subscribe((res: any) => {
-      selectedHero = res;
-      console.log(res)
-    }, err => {
-      console.log(err)
-    });
+/*  async clickToSelectCharacters() {
+    try {
+      this.hero1 = (await this.selectCharacter(this.characterName1) as any).data.results[0];
+      this.hero2 = (await this.selectCharacter(this.characterName2) as any).data.results[0];
+      if (this.hero1 || this.hero2 === undefined) {
+          throw new Error('Não foi possível encontrar o herói digitado')
+      }
+    }
+    catch (e) {
+      console.log(e)
+      if (typeof e === 'undefined') {
+        console.log('caiu')
+        alert(e);
+        console.log(e)
+      } else {
+        alert(e.error.status);
+        console.log(e);
+      }
+    }
+  }*/
+
+  selectCharacter(name: string) {
+    return this.apiService.getCharacter(name).toPromise();
   }
 
   gameOver(): boolean {
-    console.log("caiu aqui?");
     return this.isGameOver;
   }
 
   newGame()  {
-    console.log('new game?');
     this.board = [];
     for (let row = 0; row < 3; row++) {
       this.board[row] = [];
@@ -125,4 +139,6 @@ export class BoardComponent implements OnInit {
 
     return false;
   }
+
+
 }
